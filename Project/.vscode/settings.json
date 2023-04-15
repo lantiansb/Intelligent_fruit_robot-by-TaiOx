@@ -1,0 +1,25 @@
+{
+    "files.associations": {
+        "ht32_board_config.h": "c",
+        "key.h": "c",
+        "sys.h": "c",
+        "delay.h": "c",
+        "usart.h": "c",
+        "led.h": "c",
+        "ht32.h": "c",
+        "ht32f5xxxx_01.h": "c",
+        "ht32_cm0plus_misc.h": "c",
+        "pwm.h": "c",
+        "gpioinput.h": "c",
+        "ht32f5xxxx_gpio.h": "c",
+        "servo.h": "c",
+        "math.h": "c",
+        "ht32f5xxxx_lib.h": "c",
+        "ht32f5xxxx_conf.h": "c",
+        "cstdio": "c",
+        "stdio.h": "c",
+        "stdarg.h": "c",
+        "network.h": "c",
+        "esp8266.h": "c"
+    }
+}
