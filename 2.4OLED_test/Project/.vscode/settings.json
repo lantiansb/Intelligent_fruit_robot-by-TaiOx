@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "oled.h": "c",
+        "oled_font.h": "c",
+        "i2c_eeprom.h": "c",
+        "ht32.h": "c",
+        "delay.h": "c",
+        "ht32_board.h": "c"
+    }
+}
