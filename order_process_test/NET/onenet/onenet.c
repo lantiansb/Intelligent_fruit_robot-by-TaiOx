@@ -29,6 +29,7 @@
 
 #define DEVID		"1068836997"
 
+const int8 *topics[] = {"/deviceA/commands"};//发送订单主题
 
 //==========================================================
 //	函数名称：	OneNet_DevLink
@@ -129,9 +130,7 @@ void OneNet_SendData(void)
 	printf( "Tips:	OneNet_SendData-MQTT\r\n");
 	
 	memset(buf, 0, sizeof(buf));//清空数组内容
-	
-	body_len = OneNet_FillBuf(buf);																	//获取当前需要发送的数据流的总长度
-	
+		
 	if(body_len)
 	{
 		if(MQTT_PacketSaveData(DEVID, body_len, NULL, 5, &mqttPacket) == 0)							//封包
@@ -150,6 +149,51 @@ void OneNet_SendData(void)
 	
 }
 
+//==========================================================
+//	函数名称：	SubscribeOrder
+//
+//	函数功能：	订阅下单主题
+//
+//	入口参数：	type：发送数据的格式
+//
+//	返回参数：	返回订阅是否成功
+//
+//	说明：		
+//==========================================================
+u8 SubscribeOrder(void)
+{
+	MQTT_PACKET_STRUCTURE mqttPacket = {NULL, 0, 0, 0};												//协议包
+	char buf[128];
+	short body_len = 0, i = 0;
+	printf( "Tips:	OneNet_SubscribeOrder\r\n");
+	memset(buf, 0, sizeof(buf));//清空数组内容
+    
+    if(MQTT_PacketSubscribe(MQTT_SUBSCRIBE_ID, MQTT_QOS_LEVEL0, topics, sizeof(topics)/4, &mqttPacket) == OK)
+    {
+        printf( "\r\n");
+        ESP8266_SendData(mqttPacket._data, mqttPacket._len);									//上传数据到平台
+        printf( "Send %d Bytes\r\n", mqttPacket._len);
+        printf( "%s\r\n", mqttPacket._data);
+        printf( "%d\r\n", mqttPacket._memFlag);
+        printf( "%d\r\n", mqttPacket._size);
+        MQTT_DeleteBuffer(&mqttPacket);															//删包
+        return OK;
+    }
+    else
+        printf(  "WARN:	Subscribe Failed\r\n");
+    return NO;
+}
+
+void Order_Publish(void)
+{
+//	MQTT_PACKET_STRUCTURE mqttPacket = {NULL, 0, 0, 0};												//协议包
+//	char buf[128];
+//	short body_len = 0, i = 0;
+//	printf( "Tips:	OneNet_SubscribeOrder\r\n");
+//	memset(buf, 0, sizeof(buf));//清空数组内容
+//	body_len = OneNet_FillBuf(buf);																	//获取当前需要发送的数据流的总长度
+//    MQTT_PacketPublish();
+}
 ////==========================================================
 ////	函数名称：	OneNet_RevPro
 ////

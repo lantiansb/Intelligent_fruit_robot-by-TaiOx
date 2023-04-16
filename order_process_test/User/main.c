@@ -17,15 +17,17 @@ int main(void)
     USART_Configuration();
     ESP8266_Init();
     OneNet_DevLink();
+    delay_ms(2000);
+    while(SubscribeOrder() == NO);
     while(1)
     {
-        delay_ms(2000);
-        printf( "OneNet_SendData\r\n");//通过串口1发送提示信息（要开始发送数据了）
-            
-        OneNet_SendData();//发送数据给onenet
+//        delay_ms(2000);
+//        printf( "OneNet_SendData\r\n");//通过串口1发送提示信息（要开始发送数据了）
+//            
+//        OneNet_SendData();//发送数据给onenet
 
-        printf("send_data_end\n");
+//        printf("send_data_end\n");
 
-        ESP8266_Clear();
+//        ESP8266_Clear();
     }
 }

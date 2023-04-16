@@ -17,5 +17,8 @@ void OneNet_RevPro(unsigned char *cmd);
 
 void OneNet_SendPicture(char *devid, const char* picture, unsigned int pic_len);
 
+u8 SubscribeOrder(void);//订阅主题函数
+
+void Order_Publish(void);//发布主题函数测试
 
 #endif
