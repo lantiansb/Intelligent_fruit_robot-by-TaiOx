@@ -863,7 +863,7 @@ uint1 MQTT_UnPacketUnSubscribe(uint8 *rev_data)
 //				payload_len：消息体长度
 //				qos：重发次数
 //				retain：离线消息推送
-//				own：
+//				own：一个整数，表示该 PUBLISH 消息的 OWN 标志位。OWN 标志位用于标识消息发布者是否希望接收该消息。如果为 1，则表示发布者不希望接收该消息。
 //				mqttPacket：包指针
 //
 //	返回参数：	0-成功		其他-失败

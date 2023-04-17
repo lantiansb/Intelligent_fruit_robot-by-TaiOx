@@ -45,8 +45,12 @@
 ..\output\main.o: ..\Libraries\HT32F5xxxx_Driver\inc\ht32_rand.h
 ..\output\main.o: ..\Libraries\HT32F5xxxx_Driver\inc\ht32f5xxxx_dac_dual16.h
 ..\output\main.o: ..\Libraries\HT32F5xxxx_Driver\inc\ht32f5xxxx_midi.h
+..\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\output\main.o: ..\Utilities\common\sys\sys.h
 ..\output\main.o: ..\Utilities\common\delay\delay.h
 ..\output\main.o: ..\Utilities\common\usart\usart.h
 ..\output\main.o: ..\NET\device\esp8266.h
+..\output\main.o: ..\NET\MQTT\MqttKit.h
+..\output\main.o: ..\NET\MQTT\Common.h
+..\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\output\main.o: ..\NET\onenet\onenet.h

@@ -29,7 +29,8 @@
 
 #define DEVID		"1068836997"
 
-const int8 *topics[] = {"/deviceA/commands"};//发送订单主题
+const int8 *topics[] = {"/deviceB/commands"};//发送订单主题
+const char *payload = "hhhh";
 
 //==========================================================
 //	函数名称：	OneNet_DevLink
@@ -125,7 +126,7 @@ void OneNet_SendData(void)
 	
 	char buf[128];
 	
-	short body_len = 0, i = 0;
+	short body_len = 0;
 	
 	printf( "Tips:	OneNet_SendData-MQTT\r\n");
 	
@@ -135,8 +136,6 @@ void OneNet_SendData(void)
 	{
 		if(MQTT_PacketSaveData(DEVID, body_len, NULL, 5, &mqttPacket) == 0)							//封包
 		{
-			for(; i < body_len; i++)
-				mqttPacket._data[mqttPacket._len++] = buf[i];
 			
 			ESP8266_SendData(mqttPacket._data, mqttPacket._len);									//上传数据到平台
 			printf( "Send %d Bytes\r\n", mqttPacket._len);
@@ -163,17 +162,12 @@ void OneNet_SendData(void)
 u8 SubscribeOrder(void)
 {
 	MQTT_PACKET_STRUCTURE mqttPacket = {NULL, 0, 0, 0};												//协议包
-	char buf[128];
-	short body_len = 0, i = 0;
 	printf( "Tips:	OneNet_SubscribeOrder\r\n");
-	memset(buf, 0, sizeof(buf));//清空数组内容
     
     if(MQTT_PacketSubscribe(MQTT_SUBSCRIBE_ID, MQTT_QOS_LEVEL0, topics, sizeof(topics)/4, &mqttPacket) == OK)
     {
-        printf( "\r\n");
         ESP8266_SendData(mqttPacket._data, mqttPacket._len);									//上传数据到平台
         printf( "Send %d Bytes\r\n", mqttPacket._len);
-        printf( "%s\r\n", mqttPacket._data);
         printf( "%d\r\n", mqttPacket._memFlag);
         printf( "%d\r\n", mqttPacket._size);
         MQTT_DeleteBuffer(&mqttPacket);															//删包
@@ -186,13 +180,12 @@ u8 SubscribeOrder(void)
 
 void Order_Publish(void)
 {
-//	MQTT_PACKET_STRUCTURE mqttPacket = {NULL, 0, 0, 0};												//协议包
-//	char buf[128];
-//	short body_len = 0, i = 0;
-//	printf( "Tips:	OneNet_SubscribeOrder\r\n");
-//	memset(buf, 0, sizeof(buf));//清空数组内容
-//	body_len = OneNet_FillBuf(buf);																	//获取当前需要发送的数据流的总长度
-//    MQTT_PacketPublish();
+	MQTT_PACKET_STRUCTURE mqttPacket = {NULL, 0, 0, 0};												//协议包
+	printf( "Tips:	OneNet_Publish\r\n");
+    while(MQTT_PacketPublish(MQTT_PUBLISH_ID, topics[0], payload, strlen(payload), MQTT_QOS_LEVEL0, 1, 0, &mqttPacket));
+    ESP8266_SendData(mqttPacket._data, mqttPacket._len);
+	printf( "length: %d\r\n", strlen(payload));
+    MQTT_DeleteBuffer(&mqttPacket);															//删包
 }
 ////==========================================================
 ////	函数名称：	OneNet_RevPro

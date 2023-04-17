@@ -63,21 +63,6 @@ void USART_Configuration(void)
 }
 
 
-/**************************实现函数********************************************
-函数说明：接收中断服务函数
-
-*******************************************************************************/ 
-void USART1_IRQHandler(void)			//串口1中断服务函数
-{
-	u8 data;
-	
-	if( USART_GetFlagStatus(HT_USART1, USART_FLAG_RXDR ) )         //接收中断
-	{
-		data = USART_ReceiveData(HT_USART1);                         //读取接收到的数据
-		Usart_Sendbyte(HT_USART1,data);                                 //把收到的数据发送回上位机		
-	}
-	USART_ClearFlag(HT_USART1,USART_FLAG_RXDR);
-}
 
 //串口0用作ESP8266通讯接口，中断服务函数改设在ESP8266.c
 // void USART0_IRQHandler(void)			//串口0中断服务函数
@@ -196,3 +181,18 @@ void UsartPrintf(HT_USART_TypeDef* USARTx, char *fmt,...)
 
 }
 
+/**************************实现函数********************************************
+函数说明：接收中断服务函数
+
+*******************************************************************************/ 
+//void USART1_IRQHandler(void)			//串口1中断服务函数
+//{
+//	u8 data;
+//	
+//	if( USART_GetFlagStatus(HT_USART1, USART_FLAG_RXDR ) )         //接收中断
+//	{
+//		data = USART_ReceiveData(HT_USART1);                         //读取接收到的数据
+////		Usart_Sendbyte(HT_USART0,data);                                 //把收到的数据发送回上位机		
+//	}
+//	USART_ClearFlag(HT_USART1,USART_FLAG_RXDR);
+//}
