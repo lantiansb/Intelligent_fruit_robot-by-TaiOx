@@ -1,6 +1,6 @@
 Dependencies for Project 'Templete', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::ARMCC
-F (..\User\main.c)(0x6434FDED)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\LED -I ..\Utilities\common\delay -I ..\Hardware\KEY -I ..\Utilities\common -I ..\Utilities\common\sys -I ..\Utilities\common\usart -I ..\Hardware\GPIOInput -I ..\Hardware\OLED -I ..\Libraries\USER_LIB\PWM -I ..\Hardware\Servo -I ..\Libraries\HT32F5xxxx_Driver\inc-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\main.o --omf_browse ..\output\main.crf --depend ..\output\main.d)
+F (..\User\main.c)(0x6449E10E)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\LED -I ..\Utilities\common\delay -I ..\Hardware\KEY -I ..\Utilities\common -I ..\Utilities\common\sys -I ..\Utilities\common\usart -I ..\Hardware\GPIOInput -I ..\Hardware\OLED -I ..\Libraries\USER_LIB\PWM -I ..\Hardware\Servo -I ..\Libraries\HT32F5xxxx_Driver\inc-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\main.o --omf_browse ..\output\main.crf --depend ..\output\main.d)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32.h)(0x59959B2B)
 I (..\Libraries\Device\Holtek\HT32F5xxxx\Include\ht32f5xxxx_01.h)(0x5C0F948B)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32_config.h)(0x5B31BE11)
@@ -51,7 +51,7 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (..\Utilities\common\sys\sys.h)(0x64117C71)
 I (..\Utilities\common\delay\delay.h)(0x6411AC63)
 I (..\Utilities\common\usart\usart.h)(0x64342E63)
-I (..\Hardware\Servo\servo.h)(0x64290189)
+I (..\Hardware\Servo\servo.h)(0x6447E597)
 F (..\User\ht32f5xxxx_01_it.c)(0x5B6401A0)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\LED -I ..\Utilities\common\delay -I ..\Hardware\KEY -I ..\Utilities\common -I ..\Utilities\common\sys -I ..\Utilities\common\usart -I ..\Hardware\GPIOInput -I ..\Hardware\OLED -I ..\Libraries\USER_LIB\PWM -I ..\Hardware\Servo -I ..\Libraries\HT32F5xxxx_Driver\inc-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\ht32f5xxxx_01_it.o --omf_browse ..\output\ht32f5xxxx_01_it.crf --depend ..\output\ht32f5xxxx_01_it.d)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32.h)(0x59959B2B)
 I (..\Libraries\Device\Holtek\HT32F5xxxx\Include\ht32f5xxxx_01.h)(0x5C0F948B)
@@ -1963,10 +1963,10 @@ I (..\Utilities\common/spi_flash.h)(0x5AD97953)
 I (..\Utilities\common/ebi_lcd.h)(0x5B14D2DC)
 I (..\Utilities\common\delay\delay.h)(0x6411AC63)
 I (..\Hardware\OLED\OLED_Font.h)(0x640F3400)
-F (..\Hardware\Servo\servo.c)(0x6434FDEB)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\LED -I ..\Utilities\common\delay -I ..\Hardware\KEY -I ..\Utilities\common -I ..\Utilities\common\sys -I ..\Utilities\common\usart -I ..\Hardware\GPIOInput -I ..\Hardware\OLED -I ..\Libraries\USER_LIB\PWM -I ..\Hardware\Servo -I ..\Libraries\HT32F5xxxx_Driver\inc-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\servo.o --omf_browse ..\output\servo.crf --depend ..\output\servo.d)
+F (..\Hardware\Servo\servo.c)(0x6449DFD6)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\LED -I ..\Utilities\common\delay -I ..\Hardware\KEY -I ..\Utilities\common -I ..\Utilities\common\sys -I ..\Utilities\common\usart -I ..\Hardware\GPIOInput -I ..\Hardware\OLED -I ..\Libraries\USER_LIB\PWM -I ..\Hardware\Servo -I ..\Libraries\HT32F5xxxx_Driver\inc-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\servo.o --omf_browse ..\output\servo.crf --depend ..\output\servo.d)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
-I (..\Hardware\Servo\servo.h)(0x64290189)
+I (..\Hardware\Servo\servo.h)(0x6447E597)
 I (..\Libraries\USER_LIB\PWM\PWM.h)(0x6426C955)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32.h)(0x59959B2B)
 I (..\Libraries\Device\Holtek\HT32F5xxxx\Include\ht32f5xxxx_01.h)(0x5C0F948B)

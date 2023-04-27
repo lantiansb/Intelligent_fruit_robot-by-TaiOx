@@ -18,7 +18,6 @@ extern double target_angle_2;
 extern double target_angle_3;
 extern double target_angle_4;
 
-int location[3] = {0,0,0};
 u8 rec_buf[20];
 u8 rec_index;
 u8 rec_size;
@@ -28,24 +27,37 @@ int main(void)
     memset(rec_buf, 0, sizeof(rec_buf));
     
     pwm_start();
-    USART_Configuration();
+//    USART_Configuration();
+//    printf("hhhh\r\n");
+    servo_angle_calculate(23, 0, 0);
+    
+    servo_control(target_angle_1,-target_angle_2,target_angle_3,target_angle_4,0,0);
+    delay_ms(1000);
+    servo_control(target_angle_1,-target_angle_2,target_angle_3,target_angle_4,0,20);
+    servo_angle_calculate(-23, 0, 0);
+    servo_control(target_angle_1,-target_angle_2,target_angle_3,target_angle_4,0,0);
+    delay_ms(1000);
+    servo_control(0,-0,0,0,0,0);
+//    servo_control(0,-53.000000,-9.684918,90.185072,0,0);
+//    servo_control(0,-53.000000,-9.684918,90.185072,0,60);
+//    servo_control(0,-0,0,0,0,90);
+//    servo_control(0,53.000000,9.684918,-90.185072,0,60);
+//    servo_control(0,53.000000,9.684918,-90.185072,0,0);
+//    servo_control(0,-0,0,0,0,0);   
+    
     while(1)
     {
         
-        sscanf((char *)rec_buf, "%d %d %d", &location[0], &location[1], &location[2]);
-        printf("%d %d %d\r\n", location[0], location[1], location[2]);
-        servo_angle_calculate(location[0], location[1], location[2]);
-        rec_index = 0;
-        servo_control(target_angle_1,-target_angle_2,target_angle_3,target_angle_4,0,0);
+//        sscanf((char *)rec_buf, "%d %d %d", &location[0], &location[1], &location[2]);
+//        printf("%d %d %d\r\n", location[0], location[1], location[2]);
         
 //        servo_control(target_angle_1,target_angle_2,target_angle_3,target_angle_4,0,0);
-//        servo_control(45,0,0,0,0,0);
 //        servo_control(0,-45,0,0,0,0);
 //        servo_control(0,0,45,0,0,0);
 //        servo_control(0,0,0,45,0,0);
 //        servo_control(0,0,0,0,45,0);
 //        servo_control(0,0,0,0,0,45);
-        delay_ms(1000);
+//        delay_ms(5000);
 //        printf("Loading Finished!\r\n");
 //        delay_ms(1000);	
 //        servo_angle_calculate(13, 20, 10);
