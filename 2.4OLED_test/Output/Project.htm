@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\Output\Project.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\Output\Project.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Apr 15 16:34:00 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu May 04 00:41:47 2023
 <BR><P>
 <H3>Maximum Stack Usage =        124 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -243,7 +243,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_ht32f5xxxx_01.o(RESET)
 </UL>
 <P><STRONG><a name="[34]"></a>OLED_Clear</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, oled.o(i.OLED_Clear))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = OLED_Clear &rArr; OLED_Refresh &rArr; OLED_WR_Byte
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = OLED_Clear &rArr; OLED_Refresh &rArr; OLED_WR_Byte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_Refresh
 </UL>
@@ -252,7 +252,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[36]"></a>OLED_ColorTurn</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, oled.o(i.OLED_ColorTurn))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = OLED_ColorTurn &rArr; OLED_WR_Byte
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = OLED_ColorTurn &rArr; OLED_WR_Byte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_WR_Byte
 </UL>
@@ -260,7 +260,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[38]"></a>OLED_DisplayTurn</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, oled.o(i.OLED_DisplayTurn))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = OLED_DisplayTurn &rArr; OLED_WR_Byte
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = OLED_DisplayTurn &rArr; OLED_WR_Byte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_WR_Byte
 </UL>
@@ -275,8 +275,8 @@ Global Symbols
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ShowChar
 </UL>
 
-<P><STRONG><a name="[39]"></a>OLED_Init</STRONG> (Thumb, 246 bytes, Stack size 8 bytes, oled.o(i.OLED_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = OLED_Init &rArr; OLED_Clear &rArr; OLED_Refresh &rArr; OLED_WR_Byte
+<P><STRONG><a name="[39]"></a>OLED_Init</STRONG> (Thumb, 274 bytes, Stack size 16 bytes, oled.o(i.OLED_Init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = OLED_Init &rArr; OLED_Clear &rArr; OLED_Refresh &rArr; OLED_WR_Byte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 <LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_Clear
@@ -294,7 +294,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[35]"></a>OLED_Refresh</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, oled.o(i.OLED_Refresh))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = OLED_Refresh &rArr; OLED_WR_Byte
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = OLED_Refresh &rArr; OLED_WR_Byte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_WR_Byte
 </UL>
@@ -357,8 +357,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[37]"></a>OLED_WR_Byte</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, oled.o(i.OLED_WR_Byte))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = OLED_WR_Byte
+<P><STRONG><a name="[37]"></a>OLED_WR_Byte</STRONG> (Thumb, 106 bytes, Stack size 24 bytes, oled.o(i.OLED_WR_Byte))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = OLED_WR_Byte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetOutBits
 <LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ClearOutBits

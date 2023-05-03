@@ -1,6 +1,6 @@
 Dependencies for Project 'Templete', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::ARMCC
-F (..\User\main.c)(0x643D6961)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\LED -I ..\Utilities\common\delay -I ..\Hardware\KEY -I ..\Utilities\common -I ..\Utilities\common\sys -I ..\Utilities\common\usart -I ..\Hardware\GPIOInput -I ..\Hardware\OLED -I ..\Libraries\USER_LIB\PWM -I ..\Hardware\Servo -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\NET\CJSON -I ..\NET\device -I ..\NET\MQTT -I ..\NET\onenet-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\main.o --omf_browse ..\output\main.crf --depend ..\output\main.d)
+F (..\User\main.c)(0x6450A196)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\LED -I ..\Utilities\common\delay -I ..\Hardware\KEY -I ..\Utilities\common -I ..\Utilities\common\sys -I ..\Utilities\common\usart -I ..\Hardware\GPIOInput -I ..\Hardware\OLED -I ..\Libraries\USER_LIB\PWM -I ..\Hardware\Servo -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\NET\CJSON -I ..\NET\device -I ..\NET\MQTT -I ..\NET\onenet-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\main.o --omf_browse ..\output\main.crf --depend ..\output\main.d)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32.h)(0x59959B2B)
 I (..\Libraries\Device\Holtek\HT32F5xxxx\Include\ht32f5xxxx_01.h)(0x5C0F948B)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32_config.h)(0x5B31BE11)
@@ -51,10 +51,10 @@ I (..\Utilities\common\sys\sys.h)(0x64117C71)
 I (..\Utilities\common\delay\delay.h)(0x6411AC63)
 I (..\Utilities\common\usart\usart.h)(0x64355360)
 I (..\NET\device\esp8266.h)(0x64355360)
-I (..\NET\MQTT\MqttKit.h)(0x626E3E5B)
+I (..\NET\MQTT\MqttKit.h)(0x644E02BC)
 I (..\NET\MQTT\Common.h)(0x626E3E5B)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
-I (..\NET\onenet\onenet.h)(0x643B6CC8)
+I (..\NET\onenet\onenet.h)(0x6450A22D)
 F (..\User\ht32f5xxxx_01_it.c)(0x5B6401A0)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\LED -I ..\Utilities\common\delay -I ..\Hardware\KEY -I ..\Utilities\common -I ..\Utilities\common\sys -I ..\Utilities\common\usart -I ..\Hardware\GPIOInput -I ..\Hardware\OLED -I ..\Libraries\USER_LIB\PWM -I ..\Hardware\Servo -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\NET\CJSON -I ..\NET\device -I ..\NET\MQTT -I ..\NET\onenet-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\ht32f5xxxx_01_it.o --omf_browse ..\output\ht32f5xxxx_01_it.crf --depend ..\output\ht32f5xxxx_01_it.d)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32.h)(0x59959B2B)
 I (..\Libraries\Device\Holtek\HT32F5xxxx\Include\ht32f5xxxx_01.h)(0x5C0F948B)
@@ -1973,7 +1973,7 @@ I (D:\Keil_v5\ARM\ARMCC\include\limits.h)(0x60252376)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x60252376)
 I (..\NET\CJSON\cJSON.h)(0x626E3E5B)
 F (..\NET\MQTT\MqttKit.c)(0x643CAD63)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\LED -I ..\Utilities\common\delay -I ..\Hardware\KEY -I ..\Utilities\common -I ..\Utilities\common\sys -I ..\Utilities\common\usart -I ..\Hardware\GPIOInput -I ..\Hardware\OLED -I ..\Libraries\USER_LIB\PWM -I ..\Hardware\Servo -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\NET\CJSON -I ..\NET\device -I ..\NET\MQTT -I ..\NET\onenet-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\mqttkit.o --omf_browse ..\output\mqttkit.crf --depend ..\output\mqttkit.d)
-I (..\NET\MQTT\MqttKit.h)(0x626E3E5B)
+I (..\NET\MQTT\MqttKit.h)(0x644E02BC)
 I (..\NET\MQTT\Common.h)(0x626E3E5B)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (..\Utilities\common\usart\usart.h)(0x64355360)
@@ -2024,7 +2024,7 @@ I (..\Libraries\HT32F5xxxx_Driver\inc\ht32f5xxxx_dac_dual16.h)(0x5C101D03)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32f5xxxx_midi.h)(0x5C101D03)
 I (..\Utilities\common\sys\sys.h)(0x64117C71)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
-F (..\NET\device\esp8266.c)(0x64356DE3)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\LED -I ..\Utilities\common\delay -I ..\Hardware\KEY -I ..\Utilities\common -I ..\Utilities\common\sys -I ..\Utilities\common\usart -I ..\Hardware\GPIOInput -I ..\Hardware\OLED -I ..\Libraries\USER_LIB\PWM -I ..\Hardware\Servo -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\NET\CJSON -I ..\NET\device -I ..\NET\MQTT -I ..\NET\onenet-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\esp8266.o --omf_browse ..\output\esp8266.crf --depend ..\output\esp8266.d)
+F (..\NET\device\esp8266.c)(0x64507044)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\LED -I ..\Utilities\common\delay -I ..\Hardware\KEY -I ..\Utilities\common -I ..\Utilities\common\sys -I ..\Utilities\common\usart -I ..\Hardware\GPIOInput -I ..\Hardware\OLED -I ..\Libraries\USER_LIB\PWM -I ..\Hardware\Servo -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\NET\CJSON -I ..\NET\device -I ..\NET\MQTT -I ..\NET\onenet-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\esp8266.o --omf_browse ..\output\esp8266.crf --depend ..\output\esp8266.d)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32.h)(0x59959B2B)
 I (..\Libraries\Device\Holtek\HT32F5xxxx\Include\ht32f5xxxx_01.h)(0x5C0F948B)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32_config.h)(0x5B31BE11)
@@ -2075,7 +2075,7 @@ I (..\Utilities\common\delay\delay.h)(0x6411AC63)
 I (..\Utilities\common\usart\usart.h)(0x64355360)
 I (..\Utilities\common\sys\sys.h)(0x64117C71)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
-F (..\NET\onenet\onenet.c)(0x643D6961)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\LED -I ..\Utilities\common\delay -I ..\Hardware\KEY -I ..\Utilities\common -I ..\Utilities\common\sys -I ..\Utilities\common\usart -I ..\Hardware\GPIOInput -I ..\Hardware\OLED -I ..\Libraries\USER_LIB\PWM -I ..\Hardware\Servo -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\NET\CJSON -I ..\NET\device -I ..\NET\MQTT -I ..\NET\onenet-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\onenet.o --omf_browse ..\output\onenet.crf --depend ..\output\onenet.d)
+F (..\NET\onenet\onenet.c)(0x6450B920)(--c99 -c --cpu Cortex-M0+ -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\LED -I ..\Utilities\common\delay -I ..\Hardware\KEY -I ..\Utilities\common -I ..\Utilities\common\sys -I ..\Utilities\common\usart -I ..\Hardware\GPIOInput -I ..\Hardware\OLED -I ..\Libraries\USER_LIB\PWM -I ..\Hardware\Servo -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\NET\CJSON -I ..\NET\device -I ..\NET\MQTT -I ..\NET\onenet-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\onenet.o --omf_browse ..\output\onenet.crf --depend ..\output\onenet.d)
 I (..\Libraries\HT32F5xxxx_Driver\inc\HT32.h)(0x59959B2B)
 I (..\Libraries\Device\Holtek\HT32F5xxxx\Include\ht32f5xxxx_01.h)(0x5C0F948B)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32_config.h)(0x5B31BE11)
@@ -2122,8 +2122,8 @@ I (..\Libraries\HT32F5xxxx_Driver\inc\ht32_rand.h)(0x57B1BC8E)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32f5xxxx_dac_dual16.h)(0x5C101D03)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32f5xxxx_midi.h)(0x5C101D03)
 I (..\NET\device\esp8266.h)(0x64355360)
-I (..\NET\onenet\onenet.h)(0x643B6CC8)
-I (..\NET\MQTT\mqttkit.h)(0x626E3E5B)
+I (..\NET\onenet\onenet.h)(0x6450A22D)
+I (..\NET\MQTT\mqttkit.h)(0x644E02BC)
 I (..\NET\MQTT\Common.h)(0x626E3E5B)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (..\Utilities\common\usart\usart.h)(0x64355360)

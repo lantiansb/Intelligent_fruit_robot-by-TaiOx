@@ -387,9 +387,12 @@ void OLED_Init(void)
 {
     CKCU_PeripClockConfig_TypeDef PeripCLKConfig_TypeDef;
     PeripCLKConfig_TypeDef.Bit.PB = 1;
+    PeripCLKConfig_TypeDef.Bit.PC = 1;
 	CKCU_PeripClockConfig(PeripCLKConfig_TypeDef, ENABLE);
-    GPIO_DirectionConfig(HT_GPIOB, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4, GPIO_DIR_OUT);
-    GPIO_SetOutBits(HT_GPIOB, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4);
+    GPIO_DirectionConfig(HT_GPIOB, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_4, GPIO_DIR_OUT);
+    GPIO_DirectionConfig(HT_GPIOC, GPIO_PIN_14|GPIO_PIN_15, GPIO_DIR_OUT);
+    GPIO_SetOutBits(HT_GPIOB, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_4);
+    GPIO_SetOutBits(HT_GPIOC, GPIO_PIN_14|GPIO_PIN_15);
 	OLED_RES_Clr();
 	delay_ms(200);
 	OLED_RES_Set();

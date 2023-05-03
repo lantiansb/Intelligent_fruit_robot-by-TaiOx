@@ -47,7 +47,7 @@ I (..\Libraries\HT32F5xxxx_Driver\inc\ht32_div.h)(0x626E3E5B)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32_rand.h)(0x626E3E5B)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32f5xxxx_dac_dual16.h)(0x626E3E5B)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32f5xxxx_midi.h)(0x626E3E5B)
-I (..\Hardware\OLED\oled.h)(0x643A5E58)
+I (..\Hardware\OLED\oled.h)(0x64528E05)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (..\Hardware\OLED\bmp.h)(0x5E140228)
 F (..\User\ht32f5xxxx_01_it.c)(0x626E3E5B)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\OLED -I ..\Utilities\common-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\ht32f5xxxx_01_it.o --omf_browse ..\output\ht32f5xxxx_01_it.crf --depend ..\output\ht32f5xxxx_01_it.d)
@@ -1664,8 +1664,8 @@ I (..\Libraries\HT32F5xxxx_Driver\inc\ht32_rand.h)(0x626E3E5B)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32f5xxxx_dac_dual16.h)(0x626E3E5B)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32f5xxxx_midi.h)(0x626E3E5B)
 I (..\Utilities\common\delay.h)(0x5E4A417F)
-F (..\Hardware\OLED\oled.c)(0x643A6177)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\OLED -I ..\Utilities\common-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\oled.o --omf_browse ..\output\oled.crf --depend ..\output\oled.d)
-I (..\Hardware\OLED\oled.h)(0x643A5E58)
+F (..\Hardware\OLED\oled.c)(0x64528EC8)(-c --cpu Cortex-M0+ -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I ..\Libraries\CMSIS\Include -I ..\Libraries\Device\Holtek\HT32F5xxxx\Include -I ..\Libraries\HT32F5xxxx_Driver\inc -I ..\Libraries\HT32_USBD_Library\inc -I ..\Utilities -I ..\Libraries -I ..\Hardware\OLED -I ..\Utilities\common-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44\ARM\INC\Holtek\HT32F5xxxx-ID:\Keil_v5\Arm\Packs\Holtek\HT32_DFP\1.0.44-D__UVISION_VERSION="536" -DUSE_HT32F52342_52 -DUSE_HT32_DRIVER -DUSE_HT32F52352_SK -DUSE_HT32F52342_52 -DUSE_MEM_HT32F52352-o ..\output\oled.o --omf_browse ..\output\oled.crf --depend ..\output\oled.d)
+I (..\Hardware\OLED\oled.h)(0x64528E05)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32.h)(0x626E3E5B)
 I (..\Libraries\Device\Holtek\HT32F5xxxx\Include\ht32f5xxxx_01.h)(0x626E3E5B)
 I (..\Libraries\HT32F5xxxx_Driver\inc\ht32_config.h)(0x626E3E5B)

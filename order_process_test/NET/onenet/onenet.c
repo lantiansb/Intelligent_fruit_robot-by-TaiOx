@@ -25,12 +25,12 @@
 
 #define PROID		"592489"
 
-#define AUTH_INFO	"123456"
+#define AUTH_INFO	"12345678"
 
-#define DEVID		"1068836997"
+#define DEVID		"1072081358"
 
 const int8 *topics[] = {"/deviceB/commands"};//发送订单主题
-const char *payload = "hhhh";
+const char *payload = "OK";
 
 //==========================================================
 //	函数名称：	OneNet_DevLink
@@ -178,159 +178,66 @@ u8 SubscribeOrder(void)
     return NO;
 }
 
-void Order_Publish(void)
+//==========================================================
+//	函数名称：	Order_UnPacket
+//
+//	函数功能：	订单信息解包
+//
+//	入口参数：	str: 8266接收到的订单负载
+//
+//	返回参数：	无
+//
+//	说明：		
+//==========================================================
+void Order_UnPacket(void)
 {
-	MQTT_PACKET_STRUCTURE mqttPacket = {NULL, 0, 0, 0};												//协议包
-	printf( "Tips:	OneNet_Publish\r\n");
-    while(MQTT_PacketPublish(MQTT_PUBLISH_ID, topics[0], payload, strlen(payload), MQTT_QOS_LEVEL0, 1, 0, &mqttPacket));
-    ESP8266_SendData(mqttPacket._data, mqttPacket._len);
-	printf( "length: %d\r\n", strlen(payload));
-    MQTT_DeleteBuffer(&mqttPacket);															//删包
+    unsigned char Order_buf[128];//订单缓存数组
+    unsigned char *dataPtr = NULL;
+    int8 *topic;
+    uint16 topic_len;
+    int8 *payload_rec;
+    uint16 payload_len;
+    uint8 qos;
+    uint16 pkt_id;
+    //MQTT信息解包获取有效载荷
+    dataPtr = ESP8266_GetIPD(250);
+    const char s[2] = ";";
+    char* token;
+    char* next_token = NULL;
+
+    const char s2[2] = ",";
+    char* token2;
+    char* next_token2 = NULL;
+    if(dataPtr != NULL)//如果返回数据不为空
+    {
+        uint8 result = MQTT_UnPacketPublish(dataPtr, &topic, &topic_len, &payload_rec, &payload_len, &qos, &pkt_id);
+        if (result == 0)    // 使用提取出的值
+        {
+            memset(dataPtr, 0, sizeof((unsigned char*)dataPtr));
+            printf("接收到的 PUBLISH 数据包主题为：%.*s，负载为：%.*s\r\n", topic_len, topic, payload_len, payload_rec);
+            strcpy(Order_buf, payload_rec);
+            //订单信息解包过程
+            /* 获取第一个子字符串 */
+            token = strtok_r(Order_buf, s, &next_token);
+
+            /* 继续获取其他的子字符串 */
+            while (token != NULL) 
+            {
+                token = strtok_r(NULL, s, &next_token);
+                if (token != NULL)
+                {
+                    token2 = strtok_r(token, s2, &next_token2);
+                    printf("%s\r\n", token2);
+                    token2 = strtok_r(NULL, s2, &next_token2);
+                    printf("%s\r\n", token2);
+                }
+            }
+            memset(Order_buf, 0, sizeof((unsigned char*)Order_buf));
+            //payload_rec: 应为"ID:lantian;type:1,num:3;type:2,num:2"表示水果1要3个，水果2要2个
+        }
+        else if(result)
+            printf("解包失败\r\n");
+    }
+    ESP8266_Clear();
+    memset(topic, 0, sizeof((unsigned char*)topic));
 }
-////==========================================================
-////	函数名称：	OneNet_RevPro
-////
-////	函数功能：	平台返回数据检测
-////
-////	入口参数：	dataPtr：平台返回的数据
-////
-////	返回参数：	无
-////
-////	说明：		
-////==========================================================
-//void OneNet_RevPro(unsigned char *cmd)
-//{
-//	
-//	MQTT_PACKET_STRUCTURE mqttPacket = {NULL, 0, 0, 0};								//协议包
-//	
-//	char *req_payload = NULL;
-//	char *cmdid_topic = NULL;
-//	
-//	unsigned short req_len = 0;
-//  unsigned char type = 0;
-
-//	short result = 0;
-
-//	char *dataPtr = NULL;
-//	char numBuf[10];
-//	int num = 0;
-
-//	
-////	cJSON *json , *json_value;
-////  cJSON *json1, *json_value1;
-
-
-//	type = MQTT_UnPacketRecv(cmd);
-//	switch(type)
-//	{
-//		case MQTT_PKT_CMD:															//命令下发
-//			
-//			result = MQTT_UnPacketCmd(cmd, &cmdid_topic, &req_payload, &req_len);	//解出topic和消息体
-//			if(result == 0)
-//			{
-//				//打印收到的信息
-//				printf(  "cmdid: %s, req: %s, req_len: %d\r\n", cmdid_topic, req_payload, req_len);
-//				//云端LED控制
-//				if(strstr(req_payload,"led1 on") != 0)
-//				{
-//					LED1_ON();
-//				}
-//				else if(strstr(req_payload,"led1 off") != 0)
-//				{
-//					LED1_OFF();
-//				}
-//				
-//				
-//				//云端舵机控制
-//				//舵机1 控制
-//				else if(strstr(req_payload,"servo1 open") != 0)
-//				{
-//					Servo_Run(0);
-//				}
-//				else if(strstr(req_payload,"servo1 close") != 0)
-//				{	
-//					Servo_Run(45);
-//				}
-//				
-//				//舵机2 控制
-//				else if(strstr(req_payload,"servo2 open") != 0)
-//				{
-//					Servo_Run2(0);
-//				}
-//				else if(strstr(req_payload,"servo2 close") != 0)
-//				{	
-//					Servo_Run2(45);
-//				}
-//				
-//				//舵机3 控制
-//				else if(strstr(req_payload,"servo3 open") != 0)
-//				{
-//					Servo_Run3(0);
-//				}
-//				else if(strstr(req_payload,"servo3 close") != 0)
-//				{	
-//					Servo_Run3(45);
-//				}
-//				
-//				//舵机4 控制
-//				else if(strstr(req_payload,"servo4 open") != 0)
-//				{
-//					Servo_Run4(0);
-//				}
-//				else if(strstr(req_payload,"servo4 close") != 0)
-//				{	
-//					Servo_Run4(45);
-//				}
-//				
-//	    /*================命令发送完成后进行删包处理==================*/
-//				if(MQTT_PacketCmdResp(cmdid_topic, req_payload, &mqttPacket) == 0)	//命令回复组包
-//				{
-//					UsartPrintf(USART_DEBUG, "Tips:	Send CmdResp\r\n");
-//					
-//					ESP8266_SendData(mqttPacket._data, mqttPacket._len);			//回复命令
-//					MQTT_DeleteBuffer(&mqttPacket);									//删包
-//				}
-//			}	
-//		break;
-//			
-//		case MQTT_PKT_PUBACK:														//发送Publish消息，平台回复的Ack
-//		
-//			if(MQTT_UnPacketPublishAck(cmd) == 0)
-//				printf(  "Tips:	MQTT Publish Send OK\r\n");
-//			
-//		break;
-//		
-//		default:
-//			result = -1;
-//		break;
-//	}
-//	
-//	ESP8266_Clear();									//清空缓存
-//	
-//	if(result == -1)
-//		return;
-//	
-//	dataPtr = strchr(req_payload, '}');					//搜索'}'
-
-//	if(dataPtr != NULL && result != -1)					//如果找到了
-//	{
-//		dataPtr++;
-//		
-//		while(*dataPtr >= '0' && *dataPtr <= '9')		//判断是否是下发的命令控制数据
-//		{
-//			numBuf[num++] = *dataPtr++;
-//		}
-//		numBuf[num] = 0;
-//		
-//		num = atoi((const char *)numBuf);				//转为数值形式
-//	}
-
-//	
-//	if(type == MQTT_PKT_CMD || type == MQTT_PKT_PUBLISH)
-//	{
-//		MQTT_FreeBuffer(cmdid_topic);
-//		MQTT_FreeBuffer(req_payload);
-//	}
-//}
-
-

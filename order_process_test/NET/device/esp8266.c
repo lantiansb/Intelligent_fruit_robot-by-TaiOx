@@ -13,7 +13,7 @@
 #include <stdio.h>
 
 
-#define ESP8266_WIFI_INFO		"AT+CWJAP=\"2333\",\"22668888\"\r\n"
+#define ESP8266_WIFI_INFO		"AT+CWJAP=\"tt\",\"22668888\"\r\n"
 
 #define ESP8266_ONENET_INFO		"AT+CIPSTART=\"TCP\",\"183.230.40.39\",6002\r\n"
 
@@ -214,19 +214,19 @@ void ESP8266_Init(void)
 
 	UsartPrintf(HT_USART1, "1. AT\r\n");
 	while(ESP8266_SendCmd("AT\r\n", "OK"))
-		delay_ms(500);
+		delay_ms(200);
 	
 	UsartPrintf(HT_USART1, "2. CWMODE\r\n");
 	while(ESP8266_SendCmd("AT+CWMODE=1\r\n", "OK"))
-		delay_ms(500);
+		delay_ms(200);
 	
 	UsartPrintf(HT_USART1, "3. CWJAP\r\n");
-	while(ESP8266_SendCmd(ESP8266_WIFI_INFO, "GOT IP"))
-		delay_ms(500);
+	while(ESP8266_SendCmd(ESP8266_WIFI_INFO, "CONNECTED"))
+		delay_ms(200);
 	
 	UsartPrintf(HT_USART1, "4. CIPSTART\r\n");
 	while(ESP8266_SendCmd(ESP8266_ONENET_INFO, "CONNECT"))
-		delay_ms(500);
+		delay_ms(200);
 	
 	UsartPrintf(HT_USART1, "5. ESP8266 Init OK\r\n");
 

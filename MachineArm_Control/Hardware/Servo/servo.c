@@ -86,7 +86,7 @@ void Translate_Angle2Pulse(double angle_1, double angle_2, double angle_3, doubl
     pulse_2 = ((((angle_2 + 135) / 135) + 0.5) / 20) * (48000000/100/50);
     
     pulse_3 = ((((angle_3 + 90) / 90) + 0.5) / 20) * (48000000/100/50);//MG996R转角为正负90°
-    pulse_4 = ((((angle_4 + 10 + 90) / 90) + 0.5) / 20) * (48000000/100/50);    //8.8613°为爪子位置修正角
+    pulse_4 = ((((angle_4 + 90) / 90) + 0.5) / 20) * (48000000/100/50);    //8.8613°为爪子位置修正角
     pulse_5 = ((((angle_5 + 90) / 90) + 0.5) / 20) * (48000000/100/50);
     pulse_6 = ((((angle_6 + 90) / 90) + 0.5) / 20) * (48000000/100/50);
 }
@@ -172,17 +172,20 @@ void servo_angle_calculate(float target_x, float target_y, float target_z)
 		j3 = ANG2RAD(j3);
 		if (x1<(target_x + 1) && x1 >(target_x - 1) && y1<(target_y + 1) && y1 >(target_y - 1) && z1<(target_z + 1) && z1 >(target_z - 1) && (j1 + j2 + j3) >= 90)
 		{
-//			printf("j0:%f,j1:%f,j2:%f,j3:%f,target_x:%f,target_y:%f,target_z:%f,alpha:%f\r\n", ANG2RAD(j0), j1, j2, j3, x1, y1, z1, (j1 + j2 + j3));
-			i = 1;
-            if((x1-target_x)*(x1-target_x) + (y1-target_y)*(y1-target_y) + (z1-target_z)*(z1-target_z) < err)
+            if(j1<135 && j1>-135 && j2<90 && j2>-90 && j3<90 && j3>-90)
             {
-                err = (x1-target_x)*(x1-target_x) + (y1-target_y)*(y1-target_y) + (z1-target_z)*(z1-target_z);
-                best_x = x1;
-                best_y = y1;
-                best_z = z1;
-                best_j1 = j1;
-                best_j2 = j2;
-                best_j3 = j3;
+//			    printf("j0:%f,j1:%f,j2:%f,j3:%f,target_x:%f,target_y:%f,target_z:%f,alpha:%f\r\n", ANG2RAD(j0), j1, j2, j3, x1, y1, z1, (j1 + j2 + j3));
+                i = 1;
+                if((x1-target_x)*(x1-target_x) + (y1-target_y)*(y1-target_y) + (z1-target_z)*(z1-target_z) < err)
+                {
+                    err = (x1-target_x)*(x1-target_x) + (y1-target_y)*(y1-target_y) + (z1-target_z)*(z1-target_z);
+                    best_x = x1;
+                    best_y = y1;
+                    best_z = z1;
+                    best_j1 = j1;
+                    best_j2 = j2;
+                    best_j3 = j3;
+                }
             }
         }
 	}
@@ -207,17 +210,20 @@ void servo_angle_calculate(float target_x, float target_y, float target_z)
 		j3 = ANG2RAD(j3);
 		if (x1<(target_x + 1) && x1 >(target_x - 1) && y1<(target_y + 1) && y1 >(target_y - 1) && z1<(target_z + 1) && z1 >(target_z - 1) && (j1 + j2 + j3) >= 90)
 		{
-//			printf("j0:%f,j1:%f,j2:%f,j3:%f,target_x:%f,target_y:%f,target_z:%f,alpha:%f\r\n", ANG2RAD(j0), j1, j2, j3, x1, y1, z1, (j1 + j2 + j3));
-			i = 1;
-            if((x1-target_x)*(x1-target_x) + (y1-target_y)*(y1-target_y) + (z1-target_z)*(z1-target_z) < err)
+            if(j1<135 && j1>-135 && j2<90 && j2>-90 && j3<90 && j3>-90)
             {
-                err = (x1-target_x)*(x1-target_x) + (y1-target_y)*(y1-target_y) + (z1-target_z)*(z1-target_z);
-                best_x = x1;
-                best_y = y1;
-                best_z = z1;
-                best_j1 = j1;
-                best_j2 = j2;
-                best_j3 = j3;
+//			    printf("j0:%f,j1:%f,j2:%f,j3:%f,target_x:%f,target_y:%f,target_z:%f,alpha:%f\r\n", ANG2RAD(j0), j1, j2, j3, x1, y1, z1, (j1 + j2 + j3));
+                i = 1;
+                if((x1-target_x)*(x1-target_x) + (y1-target_y)*(y1-target_y) + (z1-target_z)*(z1-target_z) < err)
+                {
+                    err = (x1-target_x)*(x1-target_x) + (y1-target_y)*(y1-target_y) + (z1-target_z)*(z1-target_z);
+                    best_x = x1;
+                    best_y = y1;
+                    best_z = z1;
+                    best_j1 = j1;
+                    best_j2 = j2;
+                    best_j3 = j3;
+                }
             }
 		}
 	}
@@ -270,7 +276,7 @@ void servo_control(double temp_target_angle_1,double temp_target_angle_2,double 
     a4 = abs_angle_error_4;
     a5 = abs_angle_error_5;
     a6 = abs_angle_error_6;  
-
+//1
 	if(temp_target_angle_1 <= 135 && temp_target_angle_1 >= -135)
 	{
 		for(;abs_angle_error_1 >= 3;abs_angle_error_1 --)
@@ -285,7 +291,7 @@ void servo_control(double temp_target_angle_1,double temp_target_angle_2,double 
         now_angle_1 = temp_target_angle_1;
         servo_out(temp_target_angle_1, now_angle_2, now_angle_3, now_angle_4, now_angle_5, now_angle_6);
 	}
-    
+//2
 	if(temp_target_angle_2 <= 135 && temp_target_angle_2 >= -135)
 	{
 		for(;abs_angle_error_2 >= 3;abs_angle_error_2 --)
@@ -300,7 +306,7 @@ void servo_control(double temp_target_angle_1,double temp_target_angle_2,double 
         now_angle_2 = temp_target_angle_2;
         servo_out(temp_target_angle_1, temp_target_angle_2, now_angle_3, now_angle_4, now_angle_5, now_angle_6);
 	}
-
+//3
 	if(temp_target_angle_3 <= 135 && temp_target_angle_3 >= -135)
 	{
 		for(;abs_angle_error_3 >= 3;abs_angle_error_3 --)
@@ -315,7 +321,7 @@ void servo_control(double temp_target_angle_1,double temp_target_angle_2,double 
         now_angle_3 = temp_target_angle_3;
         servo_out(temp_target_angle_1, temp_target_angle_2, temp_target_angle_3, now_angle_4, now_angle_5, now_angle_6);
 	}
-
+//4
 	if(temp_target_angle_4 <= 135 && temp_target_angle_4 >= -135)
 	{
 		for(;abs_angle_error_4 >= 3;abs_angle_error_4 --)
@@ -329,7 +335,7 @@ void servo_control(double temp_target_angle_1,double temp_target_angle_2,double 
         now_angle_4 = temp_target_angle_4;
         servo_out(temp_target_angle_1,temp_target_angle_2,temp_target_angle_3,temp_target_angle_4,now_angle_5,now_angle_6);
 	}
-    
+//5
 	if(temp_target_angle_5 <= 135 && temp_target_angle_5 >= -135)
 	{
 		for(;abs_angle_error_5 >= 3;abs_angle_error_5 --)
@@ -343,7 +349,7 @@ void servo_control(double temp_target_angle_1,double temp_target_angle_2,double 
         now_angle_5 = temp_target_angle_5;
         servo_out(temp_target_angle_1,temp_target_angle_2,temp_target_angle_3,temp_target_angle_4,temp_target_angle_5,now_angle_6);
 	}
-
+//6
     //爪子无需做减速处理，防止抓力不足
 	if(temp_target_angle_6 <= 135 && temp_target_angle_6 >= -135)
 	{

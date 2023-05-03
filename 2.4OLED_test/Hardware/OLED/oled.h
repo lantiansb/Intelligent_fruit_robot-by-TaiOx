@@ -12,11 +12,11 @@
 #define OLED_SDA_Clr() GPIO_ClearOutBits(HT_GPIOB,GPIO_PIN_1)//SDA
 #define OLED_SDA_Set() GPIO_SetOutBits(HT_GPIOB,GPIO_PIN_1)
 
-#define OLED_RES_Clr() GPIO_ClearOutBits(HT_GPIOB,GPIO_PIN_2)//RES
-#define OLED_RES_Set() GPIO_SetOutBits(HT_GPIOB,GPIO_PIN_2)
+#define OLED_RES_Clr() GPIO_ClearOutBits(HT_GPIOC,GPIO_PIN_14)//RES
+#define OLED_RES_Set() GPIO_SetOutBits(HT_GPIOC,GPIO_PIN_14)
 
-#define OLED_DC_Clr()  GPIO_ClearOutBits(HT_GPIOB,GPIO_PIN_3)//DC
-#define OLED_DC_Set()  GPIO_SetOutBits(HT_GPIOB,GPIO_PIN_3)
+#define OLED_DC_Clr()  GPIO_ClearOutBits(HT_GPIOC,GPIO_PIN_15)//DC
+#define OLED_DC_Set()  GPIO_SetOutBits(HT_GPIOC,GPIO_PIN_15)
  		     
 #define OLED_CS_Clr()  GPIO_ClearOutBits(HT_GPIOB,GPIO_PIN_4)//CS
 #define OLED_CS_Set()  GPIO_SetOutBits(HT_GPIOB,GPIO_PIN_4)
