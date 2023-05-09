@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/white" />
+    <item>
+        <bitmap
+            android:antialias="true"
+            android:dither="true"
+            android:filter="true"
+            android:mipMap="false"
+            android:gravity="center"
+            android:scaleType="fitCenter"
+            android:src="@drawable/group_147"
+            android:tileMode="disabled" />
+    </item>
+</layer-list>

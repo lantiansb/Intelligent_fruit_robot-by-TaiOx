@@ -60,4 +60,3 @@
 ..\output\main.o: ..\Hardware\Infrared_Tracking\Track.h
 ..\output\main.o: ..\Hardware\OLED\OLED.h
 ..\output\main.o: ..\Hardware\OLED\BMP.h
-..\output\main.o: ..\APP\MachineArm.h

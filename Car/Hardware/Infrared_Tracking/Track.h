@@ -8,7 +8,7 @@
 /* Exported functions --------------------------------------------------------------------------------------*/
 void Track_Init(void);//循迹初始化函数
 void Car_CTRL(void);//小车运动控制函数
-void Go(void);
-void turn_right(void);
+void Go(void);//直走函数
+void turn_right(void);//右转函数
 
 #endif

@@ -682,13 +682,6 @@
         </Group>
         <Group>
           <GroupName>APP</GroupName>
-          <Files>
-            <File>
-              <FileName>MachineArm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\APP\MachineArm.c</FilePath>
-            </File>
-          </Files>
         </Group>
       </Groups>
     </Target>

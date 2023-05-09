@@ -38,10 +38,9 @@ void Track_Init()
     GPIO_InputConfig(HT_GPIOA, AFIO_PIN_6|AFIO_PIN_7|AFIO_PIN_8|AFIO_PIN_10, ENABLE);
     
     //电机控制脚,PC12、PC13置位，PC14、PC15低电平
-    GPIO_DirectionConfig(HT_GPIOC, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15, GPIO_DIR_OUT);
-    GPIO_PullResistorConfig(HT_GPIOC, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15, GPIO_PR_UP);
+    GPIO_DirectionConfig(HT_GPIOC, GPIO_PIN_12|GPIO_PIN_13, GPIO_DIR_OUT);
+    GPIO_PullResistorConfig(HT_GPIOC, GPIO_PIN_12|GPIO_PIN_13, GPIO_PR_UP);
     GPIO_SetOutBits(HT_GPIOC, GPIO_PIN_12|GPIO_PIN_13);
-    GPIO_ClearOutBits(HT_GPIOC, GPIO_PIN_14|GPIO_PIN_15);
     //初始化MCTM
     MCTM_PWM_Init();
     //开启MCTM
@@ -53,19 +52,17 @@ void Forward_Backward(unsigned char ES)
     if(ES)
     {
         GPIO_SetOutBits(HT_GPIOC, GPIO_PIN_12|GPIO_PIN_13);
-        GPIO_ClearOutBits(HT_GPIOC, GPIO_PIN_14|GPIO_PIN_15);
     }
     else
     {
         GPIO_ClearOutBits(HT_GPIOC, GPIO_PIN_12|GPIO_PIN_13);
-        GPIO_SetOutBits(HT_GPIOC, GPIO_PIN_14|GPIO_PIN_15);
     }
 }
 
 void Go()
 {
-    PWM_SetDuty(HT_MCTM0, TM_CH_2, 48000000/80000*58/100);
-    PWM_SetDuty(HT_MCTM0, TM_CH_3, 48000000/80000*58/100);
+    PWM_SetDuty(HT_MCTM0, TM_CH_2, 48000000/80000*62/100);
+    PWM_SetDuty(HT_MCTM0, TM_CH_3, 48000000/80000*62/100);
 }
 
 void turn_left()
@@ -73,7 +70,7 @@ void turn_left()
     if(ForBack)
     {
         PWM_SetDuty(HT_MCTM0, TM_CH_2, 48000000/80000*0/100);
-        PWM_SetDuty(HT_MCTM0, TM_CH_3, 48000000/80000*80/100);
+        PWM_SetDuty(HT_MCTM0, TM_CH_3, 48000000/80000*65/100);
     }
     else
     {
@@ -86,7 +83,7 @@ void turn_right()
 {
     if(ForBack)
     {
-        PWM_SetDuty(HT_MCTM0, TM_CH_2, 48000000/80000*80/100);
+        PWM_SetDuty(HT_MCTM0, TM_CH_2, 48000000/80000*65/100);
         PWM_SetDuty(HT_MCTM0, TM_CH_3, 48000000/80000*0/100);
     }
     else
@@ -139,12 +136,8 @@ void Car_CTRL(void)
     else if(LineL1 == PRESS && LineR1 == PRESS &&LineL2 == PRESS && LineR2 == PRESS)
     {
         stop();
-        if(++turn_flag_flag >= 65535)
-        {
-            turn_flag_flag = 0;
-            if(++turn_flag >= 5)
-                turn_flag = 0;
-        }
     }
+    else
+        stop();
 }
 

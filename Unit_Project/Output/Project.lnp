@@ -47,7 +47,6 @@
 "..\output\mqttkit.o"
 "..\output\esp8266.o"
 "..\output\onenet.o"
-"..\output\machinearm.o"
 --library_type=microlib --strict --scatter "..\Output\Project.sct"
 --entry Reset_Handler --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
